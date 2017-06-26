@@ -1,0 +1,12 @@
+{
+  "rules": {
+    "richText": {
+      ".read": true,
+      ".write": true
+    },
+    "bus": {
+      ".read": true,
+      ".write": true
+    }
+  }
+}
