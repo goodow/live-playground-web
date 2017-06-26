@@ -35,6 +35,11 @@ module.exports = {
       {
         test: /\.js$/,
         loader: 'babel-loader',
+        include: [resolve('node_modules/@material')]
+      },
+      {
+        test: /\.js$/,
+        loader: 'babel-loader',
         include: [resolve('src'), resolve('test')]
       },
       {
