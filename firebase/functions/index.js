@@ -21,20 +21,3 @@ return parentRef.once('value').then(snapshot => {
 }
 });
 });
-
-exports.truncateRenderModels = functions.database.ref('/bus/render/{renderType}/models/{modelId}').onWrite(event => {
-      const parentRef = event.data.ref.parent;
-return parentRef.once('value').then(snapshot => {
-      if (snapshot.numChildren() >= MAX_LOG_COUNT) {
-  let childCount = 0;
-  const updates = {};
-  snapshot.forEach(function(child) {
-    if (++childCount <= snapshot.numChildren() - MAX_LOG_COUNT) {
-      updates[child.key] = null;
-    }
-  });
-  // Update the parent. This effectively removes the extra children.
-  return parentRef.update(updates);
-}
-});
-});
