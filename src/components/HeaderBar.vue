@@ -83,7 +83,7 @@
         bus.targetClients = [select.value, '/topics/qq3175830003'];
       });
 
-      window.busRef = firebase.database().ref('bus');
+      let busRef = firebase.database().ref('bus');
       busRef.child('clients').on('value', function (snapshot) {
         self.clients.splice(0);
         snapshot.forEach(function(childSnapshot) {

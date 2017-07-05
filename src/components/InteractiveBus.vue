@@ -22,6 +22,7 @@ import autoInit from '@material/auto-init';
 import { MDCRipple } from '@material/ripple';
 import TopicSelector from "./TopicSelector";
 import MessageSend from "./MessageSend";
+import * as firebase from 'firebase';
 
 export default {
   components: {
@@ -58,6 +59,7 @@ export default {
     if (msgId) {
       let topic = this.$route.params.topic;
       let self = this;
+      let busRef = firebase.database().ref('bus');
       let child = busRef.child('history').child(topic).child('messages').child(msgId);
       window.networkProgress.begin();
       child.once('value', function (snapshot) {

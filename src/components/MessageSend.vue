@@ -124,6 +124,8 @@
       autoResizeTextArea () {
         let elements = document.querySelectorAll('.mdc-textfield--multiline');
         this.$nextTick(function () {
+          this.payload;
+          this.options;
           for (let i in elements) {
             let mdcTextfield = elements[i].MDCTextfield;
             if (!mdcTextfield) {

@@ -61,6 +61,7 @@
   import autoInit from '@material/auto-init';
   import { MDCRipple } from '@material/ripple';
   import { MDCIconToggle } from '@material/icon-toggle';
+  import * as firebase from 'firebase';
 
   export default {
     name: 'topic-selector',
@@ -105,7 +106,7 @@
           let self = this;
           let categoryItem = this.category[category];
           window.networkProgress.begin();
-          busRef.child('category').child(category).once('value', function (snapshot) {
+          this.busRef.child('category').child(category).once('value', function (snapshot) {
             window.networkProgress.end();
             categoryItem.topics = snapshot.val().topics;
             self.currentCategory = category;
@@ -132,7 +133,7 @@
 
         let self = this;
         window.networkProgress.begin();
-        busRef.child('history').child(topic).child('messages').limitToLast(10).once('value', function (snapshot) {
+        this.busRef.child('history').child(topic).child('messages').limitToLast(10).once('value', function (snapshot) {
           window.networkProgress.end();
           self.history[topic] = snapshot.val();
           self.currentTopic = topic;
@@ -147,6 +148,7 @@
     },
     mounted () {
       autoInit(this.$el);
+      this.busRef = firebase.database().ref('bus');
 
       if (this.$route.params.topic) {
         this.currentTopic = this.$route.params.topic;

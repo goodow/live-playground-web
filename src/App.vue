@@ -2,9 +2,9 @@
   <div>
     <header-bar @toggleSideBar="toggleSideBar"></header-bar>
 
-    <div class="demo-content">
+    <div class="page-content">
       <side-bar v-show="sideBarVisible"></side-bar>
-      <main>
+      <main class="main-content">
         <router-view></router-view>
       </main>
     </div>
@@ -27,13 +27,13 @@ var config = {
   databaseURL: "https://tencent-live.firebaseio.com",
 };
 firebase.initializeApp(config);
+//window.firebase = firebase;
 
 export default {
   name: 'app',
   data() {
     return {
       sideBarVisible: true,
-      inProgress: 0
     };
   },
   methods: {
@@ -53,12 +53,15 @@ export default {
 
 </script>
 
-<style>
+<style scoped>
   /* Place drawer and main next to each other. */
-  .demo-content {
+  .page-content {
     display: flex;
     flex: 1 1 auto;
     height: 100%;
     box-sizing: border-box;
+  }
+  .main-content {
+    width: 100%;
   }
 </style>
