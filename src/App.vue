@@ -20,6 +20,10 @@ import FooterBar from './components/FooterBar'
 import InteractiveBus from './components/topic/InteractiveBus'
 import SideBar from './components/SideBar'
 import * as firebase from 'firebase';
+import Bus from './scripts/firebase-channel';
+
+let options = {serverKey: 'AAAAi0oAoHs:APA91bHpP6JOtaE-MPMLrwhAA8SNWoqTdjZkKVeqBd1ZzgW02immONlaL7qj99T3cYUFx0elL2XSOc8z7m97ltu_o6fGQsx_iaYetFwOtwcXBV9cqvoizCTL1tV5NaJ8k4bRNHKbIk2x'};
+window.bus = new Bus(options);
 
 var config = {
   apiKey: "AIzaSyBvasV2WNLiFR6CR_m-_PbIDFEArYDtWpA",
@@ -27,7 +31,7 @@ var config = {
   databaseURL: "https://tencent-live.firebaseio.com",
 };
 firebase.initializeApp(config);
-//window.firebase = firebase;
+window.firebase = firebase;
 
 export default {
   name: 'app',

@@ -72,7 +72,7 @@
           actions: {desc: '操作指令'},
           jceRequests: {desc: 'JCE 网络请求'},
           jsBridge: {desc: 'Javascript 相互调用'},
-          renders: {desc: '视图模板'}
+          domains: {desc: '持久存储'}
         },
         history: {},
         currentCategory: '',

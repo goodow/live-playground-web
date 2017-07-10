@@ -14,7 +14,7 @@
 <script>
   import Quill from 'quill';
   import * as firebase from 'firebase';
-  import Firepad from '../scripts/firepad/firepad.js';
+  import Firepad from '../../scripts/firepad/firepad.js';
 
   export default {
     name: 'rich-editor',
@@ -69,7 +69,7 @@
 </script>
 
 <style scoped>
-  @import '../../node_modules/quill/dist/quill.snow.css';
+  @import '../../../node_modules/quill/dist/quill.snow.css';
   .flexbox-container {
     display: flex;
     padding: 20px;

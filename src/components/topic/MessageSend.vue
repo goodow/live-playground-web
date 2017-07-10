@@ -39,11 +39,7 @@
 <script>
   import autoInit from '@material/auto-init';
   import { MDCRipple } from '@material/ripple';
-  import TopicSelector from "./TopicSelector";
   import Bus from '../../scripts/firebase-channel';
-
-  let options = {serverKey: 'AAAAi0oAoHs:APA91bHpP6JOtaE-MPMLrwhAA8SNWoqTdjZkKVeqBd1ZzgW02immONlaL7qj99T3cYUFx0elL2XSOc8z7m97ltu_o6fGQsx_iaYetFwOtwcXBV9cqvoizCTL1tV5NaJ8k4bRNHKbIk2x'};
-  window.bus = new Bus(options);
 
   export default {
     name: 'message-send',
@@ -150,10 +146,10 @@
           return;
         }
 
-        window.networkProgress.begin();
         let message = {payload: this.payload, options: this.options};
         this.$emit('sendMessage', message);
         let self = this;
+        window.networkProgress.begin();
         bus.send(topic, this.payload, this.options, function (asyncResult) {
           window.networkProgress.end();
           message.reply = asyncResult.result;

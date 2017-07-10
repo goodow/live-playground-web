@@ -2,7 +2,7 @@ import Vue from 'vue'
 import Router from 'vue-router'
 import InteractiveBus from '@/components/topic/InteractiveBus'
 import ListRender from '@/components/render/ListRender'
-import RichEditor from '@/components/RichEditor'
+import RichEditor from '@/components/editor/RichEditor'
 import NotFound from '@/components/NotFound'
 
 Vue.use(Router)
@@ -23,7 +23,11 @@ export default new Router({
       component: InteractiveBus
     },
     {
-      path: '/render',
+      path: '/render/:render/models/:id',
+      component: ListRender
+    },
+    {
+      path: '/render/:render?',
       component: ListRender
     },
     {
