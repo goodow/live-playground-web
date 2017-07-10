@@ -1,6 +1,7 @@
 import Vue from 'vue'
 import Router from 'vue-router'
-import InteractiveBus from '@/components/InteractiveBus'
+import InteractiveBus from '@/components/topic/InteractiveBus'
+import ListRender from '@/components/render/ListRender'
 import RichEditor from '@/components/RichEditor'
 import NotFound from '@/components/NotFound'
 
@@ -20,6 +21,10 @@ export default new Router({
     {
       path: '/topic/:topic?',
       component: InteractiveBus
+    },
+    {
+      path: '/render',
+      component: ListRender
     },
     {
       path: '/editor',

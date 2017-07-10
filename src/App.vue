@@ -17,7 +17,7 @@
 import * as mdc from 'material-components-web';
 import HeaderBar from './components/HeaderBar'
 import FooterBar from './components/FooterBar'
-import InteractiveBus from './components/InteractiveBus'
+import InteractiveBus from './components/topic/InteractiveBus'
 import SideBar from './components/SideBar'
 import * as firebase from 'firebase';
 

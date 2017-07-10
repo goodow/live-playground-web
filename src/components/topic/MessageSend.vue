@@ -40,7 +40,7 @@
   import autoInit from '@material/auto-init';
   import { MDCRipple } from '@material/ripple';
   import TopicSelector from "./TopicSelector";
-  import Bus from '../scripts/firebase-channel';
+  import Bus from '../../scripts/firebase-channel';
 
   let options = {serverKey: 'AAAAi0oAoHs:APA91bHpP6JOtaE-MPMLrwhAA8SNWoqTdjZkKVeqBd1ZzgW02immONlaL7qj99T3cYUFx0elL2XSOc8z7m97ltu_o6fGQsx_iaYetFwOtwcXBV9cqvoizCTL1tV5NaJ8k4bRNHKbIk2x'};
   window.bus = new Bus(options);

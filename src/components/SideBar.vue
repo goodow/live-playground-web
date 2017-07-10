@@ -10,6 +10,11 @@
       <hr class="mdc-list-divider">
 
       <nav class="mdc-list">
+        <router-link to="/render" class="mdc-list-item" active-class="mdc-permanent-drawer--selected">
+          <i class="material-icons mdc-list-item__start-detail" aria-hidden="true">view_day</i>列表模板
+        </router-link>
+      </nav>
+      <nav class="mdc-list">
         <router-link to="/editor" class="mdc-list-item" active-class="mdc-permanent-drawer--selected">
           <i class="material-icons mdc-list-item__start-detail" aria-hidden="true">mode_edit</i>富文本编辑器
         </router-link>

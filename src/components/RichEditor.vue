@@ -1,5 +1,6 @@
 <template>
   <div>
+    <div>在腾讯直播 iPhone App 中实时预览: 我的->设置->快速连续三次点击"设置"标题栏打开彩蛋->实验室->开发者->富文本预览</div>
     <!-- Create the container -->
     <div id="toolbar"></div>
     <div id="editor-container"></div>
